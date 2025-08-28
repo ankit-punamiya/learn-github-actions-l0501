@@ -30,21 +30,21 @@ The dot at the end of the command tells Docker to build the image using the file
    chmod +x entrypoint.sh
    ```
 2. entrypoint.sh file:
-   ```bash
-#!/bin/bash  
-set -e #exit the script immediately if an error is encountered
+   ```
+   #!/bin/bash  
+   set -e #exit the script immediately if an error is encountered
 
-# if keyword is found
-if echo "$*" | grep -i -q FIXED; 
-then
+   # if keyword is found
+   if echo "$*" | grep -i -q FIXED; 
+   then
     # do something
     echo "Found keyword."
-# otherwise
-else
+   # otherwise
+   else
     # exit gracefully
     echo "Nothing to process."
-fi
-```
+   fi
+   ```
 
 - $ is a variable that contains the arguments that were passed to the script. We are echoing those arguments to a grep command that will look for the word fixed.
 - The -i switch tells grep to ignore a case.
